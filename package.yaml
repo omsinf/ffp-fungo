@@ -1,0 +1,63 @@
+name:                FunGo
+license:             BSD3
+author:              "Daniel Baier, Oliver Schrader and Matthias Kettl"
+maintainer:          "Baier.Daniel@campus.lmu.de, Oliver.Schrader@campus.lmu.de and M.Kettl@campus.lmu.de"
+copyright:           "2020 Daniel Baier, Oliver Schrader and Matthias Kettl"
+
+extra-source-files:
+- README.md
+
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README we provided
+
+dependencies:
+- base >= 4.7 && < 5
+- cairo
+- network
+- connection
+- network-info
+- bytestring
+- containers
+- lens
+- split
+- MissingH
+- gtk2hs-buildtools
+- glib
+- network-byte-order
+- gio
+- pango
+- gtk3
+- mtl
+- transformers
+
+library:
+  source-dirs: src
+
+executables:
+  FunGo:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - FunGo
+
+tests:
+  FunGo-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - FunGo

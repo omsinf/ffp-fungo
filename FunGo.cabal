@@ -1,0 +1,115 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: baebe886a3d83c8cb439129a4197f903cbf8e34373c776395e6656c3c51635b9
+
+name:           FunGo
+version:        0.0.0
+description:    Please see the README we provided
+author:         Daniel Baier, Oliver Schrader and Matthias Kettl
+maintainer:     Baier.Daniel@campus.lmu.de, Oliver.Schrader@campus.lmu.de and M.Kettl@campus.lmu.de
+copyright:      2020 Daniel Baier, Oliver Schrader and Matthias Kettl
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+library
+  exposed-modules:
+      ClientUtil
+      FileChooser
+      GoClient
+      GoServer
+      GUI
+      GUIUtil
+      LogicSG
+      ModelSG
+      ParseSG
+      UtilsSG
+  other-modules:
+      Paths_FunGo
+  hs-source-dirs:
+      src
+  build-depends:
+      MissingH
+    , base >=4.7 && <5
+    , bytestring
+    , cairo
+    , connection
+    , containers
+    , gio
+    , glib
+    , gtk2hs-buildtools
+    , gtk3
+    , lens
+    , mtl
+    , network
+    , network-byte-order
+    , network-info
+    , pango
+    , split
+    , transformers
+  default-language: Haskell2010
+
+executable FunGo
+  main-is: Main.hs
+  other-modules:
+      Paths_FunGo
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      FunGo
+    , MissingH
+    , base >=4.7 && <5
+    , bytestring
+    , cairo
+    , connection
+    , containers
+    , gio
+    , glib
+    , gtk2hs-buildtools
+    , gtk3
+    , lens
+    , mtl
+    , network
+    , network-byte-order
+    , network-info
+    , pango
+    , split
+    , transformers
+  default-language: Haskell2010
+
+test-suite FunGo-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_FunGo
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      FunGo
+    , MissingH
+    , base >=4.7 && <5
+    , bytestring
+    , cairo
+    , connection
+    , containers
+    , gio
+    , glib
+    , gtk2hs-buildtools
+    , gtk3
+    , lens
+    , mtl
+    , network
+    , network-byte-order
+    , network-info
+    , pango
+    , split
+    , transformers
+  default-language: Haskell2010
